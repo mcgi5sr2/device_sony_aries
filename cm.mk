@@ -12,7 +12,7 @@ $(call inherit-product, device/sony/shinano/platform2.mk)
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+#$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 # Fingerprint for aries (from stock)
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=D5803
