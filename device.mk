@@ -12,8 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Device path
+DEVICE_PATH := device/sony/aries
+
 DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/aries/overlay
+    $(DEVICE_PATH)/overlay
 
 PRODUCT_COPY_FILES := \
     device/sony/aries/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
@@ -95,5 +98,5 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.usb.pid_suffix=1BB
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/sony/shinano/platform.mk)
+$(call inherit-product, device/sony/shinano-common/platform.mk)
 $(call inherit-product, vendor/sony/shinano-aries/aries-vendor.mk)

@@ -12,8 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/sony/shinano/PlatformConfig.mk
-include device/sony/shinano/PlatformConfig2.mk
+# Device path
+DEVICE_PATH := device/sony/aries
+
+include device/sony/shinano-common/PlatformConfig.mk
+include device/sony/shinano-common/PlatformConfig2.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := D5803
 
@@ -22,6 +25,8 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656242688
 
 BOARD_KERNEL_CMDLINE += androidboot.hardware=aries
 
-PRODUCT_VENDOR_KERNEL_HEADERS += device/sony/aries/kernel-headers
+PRODUCT_VENDOR_KERNEL_HEADERS += $(DEVICE_PATH)/kernel-headers
 
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
+BOARD_HARDWARE_CLASS += device/sony/aries/cmhw
+TARGET_OTA_ASSERT_DEVICE := D5803,D5833,z3c,aries
