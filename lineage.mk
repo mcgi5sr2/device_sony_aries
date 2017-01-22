@@ -11,8 +11,7 @@ $(call inherit-product, device/sony/shinano-common/platform2.mk)
 # Inherit Lineage common Phone stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# This is almost certainly useless as I doubt it exists
-# Dalvik/HWUI
+# Dalvik
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-hwui-memory.mk)
 
